@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Expense Tracker</h1>
+      <p class="subtitle">Keep track of your income and spending.</p>
+    </header>
+
+    <section class="summary">
+      <article class="card">
+        <p>Balance</p>
+        <strong id="balance">₹0</strong>
+      </article>
+      <article class="card">
+        <p>Income</p>
+        <strong id="income">₹0</strong>
+      </article>
+      <article class="card">
+        <p>Expenses</p>
+        <strong id="expenses">₹0</strong>
+      </article>
+    </section>
+
+    <section class="content">
+      <article class="panel">
+        <h2>Transactions</h2>
+        <div id="transactionList"></div>
+      </article>
+
+      <form class="panel" id="transactionForm">
+        <h2>Add a transaction</h2>
+
+        <label for="description">Description</label>
+        <input id="description" type="text" placeholder="e.g. Groceries"
+          maxlength="60" required>
+
+        <label for="amount">Amount (₹)</label>
+        <input id="amount" type="number" min="0.01" step="0.01"
+          placeholder="e.g. 500" required>
+
+        <label for="type">Type</label>
+        <select id="type">
+          <option value="expense">Expense</option>
+          <option value="income">Income</option>
+        </select>
+
+        <label for="category">Category</label>
+        <select id="category">
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Shopping</option>
+          <option>Bills</option>
+          <option>Health</option>
+          <option>Salary</option>
+          <option>Other</option>
+        </select>
+
+        <label for="date">Date</label>
+        <input id="date" type="date" required>
+
+        <button type="submit">Add transaction</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
